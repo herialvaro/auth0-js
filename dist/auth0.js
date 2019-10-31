@@ -3526,7 +3526,7 @@
     	inAppBrowserRef.addEventListener('loadstop', function(event) {
 			new Promise((resolve, reject)=>{
 				console.log('event: ', event);
-				if(event.url.includes('auth0.com/callback#access_token=')){
+				if(event.url.includes('auth0.com/login/callback#access_token=')){
 					//inAppBrowserRef.close();
 					resolve({access_token:true, event});
 				}else if(event.url.includes('facebook.com') || event.url.includes('google.com')){
@@ -3545,7 +3545,7 @@
 			});
 		});
 
-    	inAppBrowserRef.addEventListener('loadstop', function(event) {
+    	inAppBrowserRef.addEventListener('loadstart', function(event) {
 		});
 
     	inAppBrowserRef.addEventListener('loaderror', function(event) {
