@@ -3523,7 +3523,7 @@
         var options = "location=no,clearcache=yes,toolbar=yes";
 		var inAppBrowserRef = cordova.InAppBrowser.open(url, '_blank', options);
 
-    	inAppBrowserRef.addEventListener('loadstop', function(event) {
+    	inAppBrowserRef.addEventListener('loadstop', function(event) { 
 			new Promise((resolve, reject)=>{
 				console.log('event: ', event);
 				if(event.url.includes('auth0.com/login/callback#access_token=') ||
