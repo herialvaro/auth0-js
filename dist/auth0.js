@@ -3529,7 +3529,7 @@
 				if(event.url.includes('auth0.com/login/callback#access_token=') ||
 				event.url.includes('auth0.com/callback#access_token=')){
 					resolve({access_token:true, event});
-				}else if(event.url.includes('facebook.com') || event.url.includes('google.com')){
+				} else if (event.url.includes('facebook.com') || event.url.includes('google.com') || event.url.includes('auth0.com/decision?state=')) {
 
 				}else{
 					reject({error: true, message: 'Algo salió mal'});
